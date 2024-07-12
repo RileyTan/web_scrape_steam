@@ -22,6 +22,8 @@ tags = []
 for div in tags_divs:
     tags.append(div.text_content()) # a method in the lxml library
 
+tags = [tag.split(', ') for tag in tags]
+
 
 
 
