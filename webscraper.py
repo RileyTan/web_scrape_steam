@@ -27,12 +27,17 @@ tags = [tag.split(', ') for tag in tags]
 platforms_div = new_releases.xpath('.//div[@class="tab_item_details"]')
 total_platforms = []
 
+# <span class="platform_img win"></span>
+# <span class="platform_img linux"></span>
+# platforms_div has children in the form of <span> which don't contain text.
+# instead we need to extract the platforms embedded within the class
 for game in platforms_div:
     temp = game.xpath('.//span[contains(@class, "platform_img")]')
     # if we use prev method of @class="platform_img", we only get the <span> with solely just "platform_img" as class
     # if <span> has additional class, they won't be returned
     # hence we use contains instead
     platforms = [t.get('class').split(' ')[-1] for t in temp]
+    # .get() method lets us extract the attributes of any tag which returns a string like "platform_img linux"
     if 'hmd_separator' in platforms:
         platforms.remove('hmd_separator')
     total_platforms.append(platforms)
