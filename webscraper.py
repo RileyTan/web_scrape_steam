@@ -12,7 +12,9 @@ new_releases = doc.xpath('//div[@id="tab_newreleases_content"]')[0]
 titles = new_releases.xpath('.//div[@class="tab_item_name"]/text()')
 # . means that we are only interested in the children tab of new_releases
 # filter based on class name instead of id this time
-# /text() 
+# /text() means we only want the text within the tag
+
+print(titles)
 
 
 
