@@ -16,7 +16,11 @@ titles = new_releases.xpath('.//div[@class="tab_item_name"]/text()')
 
 prices = new_releases.xpath('.//div[@class="discount_final_price"]/text()')
 
+tags_divs = new_releases.xpath('.//div[@class="tab_item_top_tags"]')
+tags = []
 
+for div in tags_divs:
+    tags.append(div.text_content())
 
 
 
