@@ -20,7 +20,8 @@ tags_divs = new_releases.xpath('.//div[@class="tab_item_top_tags"]')
 tags = []
 
 for div in tags_divs:
-    tags.append(div.text_content())
+    tags.append(div.text_content()) # a method in the lxml library
+
 
 
 
