@@ -42,10 +42,20 @@ for game in platforms_div:
     # the last element in a list that is returned after split has an index of -1
     if 'hmd_separator' in platforms:
         platforms.remove('hmd_separator')
-    # hmd_separator is not a platform, just a 
+    # hmd_separator is not a platform, just a vertical separator bar
+    # <span class="platform_img group_separator"></span>
     total_platforms.append(platforms)
 
+# turn this into a JSON reponse, so that we can easily turn this into a web-based API/use in some other project
+output = []
+for info in zip(titles, prices, tags, total_platforms):
+    resp = {}
+    resp['title'] = info[0]
+    resp['prices'] = info[1]
+    resp['tags'] = info[2]
+    resp['total_platforms'] = info[3]
+    output.append(resp)
 
-
+print(output)
 
 
