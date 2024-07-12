@@ -14,7 +14,11 @@ titles = new_releases.xpath('.//div[@class="tab_item_name"]/text()')
 # filter based on class name instead of id this time
 # /text() means we only want the text within the tag
 
-print(titles)
+prices = new_releases.xpath('.//div[@class="discount_final_price"]/text()')
+
+
+
+
 
 
 
