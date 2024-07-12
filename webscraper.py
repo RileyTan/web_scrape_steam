@@ -42,6 +42,7 @@ for game in platforms_div:
     # the last element in a list that is returned after split has an index of -1
     if 'hmd_separator' in platforms:
         platforms.remove('hmd_separator')
+    # hmd_separator is not a platform, just a 
     total_platforms.append(platforms)
 
 
