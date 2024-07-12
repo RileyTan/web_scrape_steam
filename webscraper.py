@@ -9,7 +9,10 @@ new_releases = doc.xpath('//div[@id="tab_newreleases_content"]')[0]
 # new_releases contain the whole div now, [0] because only one div contains the id of tab_newreleases_content
 # // forward slashes tell lxml to "look everywhere in the document" / means to look in the direct children of the current element
 
-
+titles = new_releases.xpath('.//div[@class="tab_item_name"]/text()')
+# . means that we are only interested in the children tab of new_releases
+# filter based on class name instead of id this time
+# /text() 
 
 
 
