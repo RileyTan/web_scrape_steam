@@ -38,6 +38,8 @@ for game in platforms_div:
     # hence we use contains instead
     platforms = [t.get('class').split(' ')[-1] for t in temp]
     # .get() method lets us extract the attributes of any tag which returns a string like "platform_img linux"
+    # we split the string based on the whitespace
+    # store 
     if 'hmd_separator' in platforms:
         platforms.remove('hmd_separator')
     total_platforms.append(platforms)
