@@ -24,7 +24,7 @@ for div in tags_divs:
 
 tags = [tag.split(', ') for tag in tags]
 
-
+platform
 
 
 
